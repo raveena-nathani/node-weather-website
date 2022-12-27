@@ -3,7 +3,7 @@
  const hbs = require('hbs');
 
  const app = express();
-
+ const port = process.env.PORT || 3000;
  const geocode = require('./utils/geocode');
  const forecast = require('./utils/forecast');
 
@@ -102,8 +102,8 @@ app.get('/help', (req, res) => {
    })
  })
 
- app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+ app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
  });
 
   //configure what the server should do when someone tries to get the resource at a specific URL 
